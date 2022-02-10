@@ -33,7 +33,25 @@ class MetabadgeExample {
 const List<MetabadgeExample> examples = [
   MetabadgeExample(
     title: 'Without Header',
-    metabadge: Metabadge(body: Text('hello')),
+    metabadge: Metabadge(
+      body: Text(
+        'hello',
+        style: TextStyle(color: Colors.white),
+      ),
+    ),
+  ),
+  MetabadgeExample(
+    title: 'With Header',
+    metabadge: Metabadge(
+      header: Text(
+        'hello',
+        style: TextStyle(color: Colors.white),
+      ),
+      body: Text(
+        'world',
+        style: TextStyle(color: Colors.white),
+      ),
+    ),
   ),
 ];
 
@@ -61,7 +79,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.only(top: 10, bottom: 10),
         ),
         itemCount: examples.length,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
       ),
     );
   }

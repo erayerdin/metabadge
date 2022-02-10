@@ -15,10 +15,12 @@
 import 'package:flutter/widgets.dart';
 
 class Metabadge extends StatelessWidget {
+  final Widget? header;
   final Widget body;
 
   const Metabadge({
     Key? key,
+    this.header,
     required this.body,
   }) : super(key: key);
 
@@ -26,6 +28,12 @@ class Metabadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        if (header != null)
+          Container(
+            padding: const EdgeInsets.all(5),
+            color: const Color.fromRGBO(66, 66, 66, 1),
+            child: header,
+          ),
         Container(
           padding: const EdgeInsets.all(5),
           color: const Color.fromRGBO(76, 175, 80, 1),
