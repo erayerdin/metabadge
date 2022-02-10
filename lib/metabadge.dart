@@ -1,5 +1,7 @@
 library metabadge;
 
+export 'src/metabadge.dart' show Metabadge;
+
 /// A Calculator.
 class Calculator {
   /// Returns [value] plus 1.
