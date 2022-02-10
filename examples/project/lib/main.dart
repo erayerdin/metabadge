@@ -32,8 +32,8 @@ class MetabadgeExample {
 
 const TextStyle whiteTextStyle = TextStyle(color: Colors.white);
 
-const List<MetabadgeExample> examples = [
-  MetabadgeExample(
+final List<MetabadgeExample> examples = [
+  const MetabadgeExample(
     title: 'Without Header',
     metabadge: Metabadge(
       body: Text(
@@ -42,7 +42,7 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
-  MetabadgeExample(
+  const MetabadgeExample(
     title: 'With Header',
     metabadge: Metabadge(
       header: Text(
@@ -55,7 +55,7 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
-  MetabadgeExample(
+  const MetabadgeExample(
     title: 'Different Body Color',
     metabadge: Metabadge(
       body: Text(
@@ -67,7 +67,7 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
-  MetabadgeExample(
+  const MetabadgeExample(
     title: 'Different Header Color',
     metabadge: Metabadge(
       body: Text(
@@ -83,7 +83,7 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
-  MetabadgeExample(
+  const MetabadgeExample(
     title: 'Border Radius without Header',
     metabadge: Metabadge(
       body: Text(
@@ -93,7 +93,7 @@ const List<MetabadgeExample> examples = [
       decoration: MetabadgeDecoration(radius: 5),
     ),
   ),
-  MetabadgeExample(
+  const MetabadgeExample(
     title: 'Border Radius with Header',
     metabadge: Metabadge(
       header: Text(
@@ -105,6 +105,29 @@ const List<MetabadgeExample> examples = [
         style: whiteTextStyle,
       ),
       decoration: MetabadgeDecoration(radius: 5),
+    ),
+  ),
+  MetabadgeExample(
+    title: 'With Header Icon',
+    metabadge: Metabadge(
+      header: Row(
+        children: const [
+          Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          Text(
+            'header',
+            style: whiteTextStyle,
+          ),
+        ],
+      ),
+      body: const Text(
+        'body',
+        style: whiteTextStyle,
+      ),
+      // TODO change radius
+      decoration: const MetabadgeDecoration(radius: 5),
     ),
   ),
 ];
