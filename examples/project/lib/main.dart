@@ -30,13 +30,15 @@ class MetabadgeExample {
   });
 }
 
+const TextStyle whiteTextStyle = TextStyle(color: Colors.white);
+
 const List<MetabadgeExample> examples = [
   MetabadgeExample(
     title: 'Without Header',
     metabadge: Metabadge(
       body: Text(
         'hello',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
     ),
   ),
@@ -45,11 +47,11 @@ const List<MetabadgeExample> examples = [
     metabadge: Metabadge(
       header: Text(
         'hello',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
       body: Text(
         'world',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
     ),
   ),
@@ -58,7 +60,7 @@ const List<MetabadgeExample> examples = [
     metabadge: Metabadge(
       body: Text(
         'red',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
       decoration: MetabadgeDecoration(
         bodyColor: Colors.red,
@@ -70,15 +72,25 @@ const List<MetabadgeExample> examples = [
     metabadge: Metabadge(
       body: Text(
         'green',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
       header: Text(
         'blue',
-        style: TextStyle(color: Colors.white),
+        style: whiteTextStyle,
       ),
       decoration: MetabadgeDecoration(
         headerColor: Colors.blue,
       ),
+    ),
+  ),
+  MetabadgeExample(
+    title: 'Border Radius without Header',
+    metabadge: Metabadge(
+      body: Text(
+        'radius',
+        style: whiteTextStyle,
+      ),
+      decoration: MetabadgeDecoration(radius: 5),
     ),
   ),
 ];
@@ -105,6 +117,7 @@ class HomePage extends StatelessWidget {
         ),
         separatorBuilder: (context, index) => const Padding(
           padding: EdgeInsets.only(top: 10, bottom: 10),
+          child: Divider(color: Colors.black54),
         ),
         itemCount: examples.length,
         padding: const EdgeInsets.all(20),
