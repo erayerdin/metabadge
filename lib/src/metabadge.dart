@@ -36,6 +36,7 @@ class Metabadge extends StatelessWidget {
       children: [
         if (header != null)
           Container(
+            height: 30,
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               color: decoration.headerColor,
@@ -44,9 +45,10 @@ class Metabadge extends StatelessWidget {
                 bottomLeft: Radius.circular(decoration.radius ?? 0),
               ),
             ),
-            child: header,
+            child: FittedBox(child: header),
           ),
         Container(
+          height: 30,
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: decoration.bodyColor,
@@ -57,7 +59,7 @@ class Metabadge extends StatelessWidget {
                     bottomRight: Radius.circular(decoration.radius ?? 0),
                   ),
           ),
-          child: body,
+          child: FittedBox(child: body),
         ),
       ],
     );
