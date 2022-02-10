@@ -24,6 +24,7 @@ class Metabadge extends StatelessWidget {
     this.header,
     this.decoration = const MetabadgeDecoration(
       bodyColor: Colors.green,
+      headerColor: Colors.black54,
     ),
     required this.body,
   }) : super(key: key);
@@ -35,7 +36,7 @@ class Metabadge extends StatelessWidget {
         if (header != null)
           Container(
             padding: const EdgeInsets.all(5),
-            color: const Color.fromRGBO(66, 66, 66, 1),
+            color: decoration.headerColor,
             child: header,
           ),
         Container(
@@ -49,9 +50,11 @@ class Metabadge extends StatelessWidget {
 }
 
 class MetabadgeDecoration {
-  final Color bodyColor;
+  final Color? bodyColor;
+  final Color? headerColor;
 
   const MetabadgeDecoration({
-    required this.bodyColor,
+    this.bodyColor = Colors.green,
+    this.headerColor = Colors.black54,
   });
 }

@@ -65,6 +65,22 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
+  MetabadgeExample(
+    title: 'Different Header Color',
+    metabadge: Metabadge(
+      body: Text(
+        'green',
+        style: TextStyle(color: Colors.white),
+      ),
+      header: Text(
+        'blue',
+        style: TextStyle(color: Colors.white),
+      ),
+      decoration: MetabadgeDecoration(
+        headerColor: Colors.blue,
+      ),
+    ),
+  ),
 ];
 
 class HomePage extends StatelessWidget {
