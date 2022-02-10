@@ -37,14 +37,25 @@ class Metabadge extends StatelessWidget {
         if (header != null)
           Container(
             padding: const EdgeInsets.all(5),
-            color: decoration.headerColor,
+            decoration: BoxDecoration(
+              color: decoration.headerColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(decoration.radius ?? 0),
+                bottomLeft: Radius.circular(decoration.radius ?? 0),
+              ),
+            ),
             child: header,
           ),
         Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(decoration.radius ?? 0),
             color: decoration.bodyColor,
+            borderRadius: header == null
+                ? BorderRadius.all(Radius.circular(decoration.radius ?? 0))
+                : BorderRadius.only(
+                    topRight: Radius.circular(decoration.radius ?? 0),
+                    bottomRight: Radius.circular(decoration.radius ?? 0),
+                  ),
           ),
           child: body,
         ),

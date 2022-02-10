@@ -93,6 +93,20 @@ const List<MetabadgeExample> examples = [
       decoration: MetabadgeDecoration(radius: 5),
     ),
   ),
+  MetabadgeExample(
+    title: 'Border Radius with Header',
+    metabadge: Metabadge(
+      header: Text(
+        'header',
+        style: whiteTextStyle,
+      ),
+      body: Text(
+        'body',
+        style: whiteTextStyle,
+      ),
+      decoration: MetabadgeDecoration(radius: 5),
+    ),
+  ),
 ];
 
 class HomePage extends StatelessWidget {
