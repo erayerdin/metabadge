@@ -53,6 +53,18 @@ const List<MetabadgeExample> examples = [
       ),
     ),
   ),
+  MetabadgeExample(
+    title: 'Different Body Color',
+    metabadge: Metabadge(
+      body: Text(
+        'red',
+        style: TextStyle(color: Colors.white),
+      ),
+      decoration: MetabadgeDecoration(
+        bodyColor: Colors.red,
+      ),
+    ),
+  ),
 ];
 
 class HomePage extends StatelessWidget {

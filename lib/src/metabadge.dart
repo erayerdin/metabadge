@@ -12,15 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class Metabadge extends StatelessWidget {
   final Widget? header;
   final Widget body;
+  final MetabadgeDecoration decoration;
 
   const Metabadge({
     Key? key,
     this.header,
+    this.decoration = const MetabadgeDecoration(
+      bodyColor: Colors.green,
+    ),
     required this.body,
   }) : super(key: key);
 
@@ -36,10 +40,18 @@ class Metabadge extends StatelessWidget {
           ),
         Container(
           padding: const EdgeInsets.all(5),
-          color: const Color.fromRGBO(76, 175, 80, 1),
+          color: decoration.bodyColor,
           child: body,
         ),
       ],
     );
   }
+}
+
+class MetabadgeDecoration {
+  final Color bodyColor;
+
+  const MetabadgeDecoration({
+    required this.bodyColor,
+  });
 }

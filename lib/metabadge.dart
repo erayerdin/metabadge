@@ -1,3 +1,3 @@
 library metabadge;
 
-export 'src/metabadge.dart' show Metabadge;
+export 'src/metabadge.dart' show Metabadge, MetabadgeDecoration;
