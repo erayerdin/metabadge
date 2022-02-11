@@ -19,6 +19,15 @@ const _defaultPadding = 5.0;
 const _defaultBodyColor = Colors.green;
 const _defaultHeaderColor = Colors.black54;
 
+/// A widget to create a [Shields](https://shields.io/)-like badge.
+///
+/// # Constructor
+///
+/// | Name | Type | Required | Default | Description |
+/// |--:|:-:|:-:|:-:|:-:|
+/// | **body**| `Widget` | ✅ | - | - |
+/// | **header** | `Widget` | ❌ | `null` | - |
+/// | **decoration** | `MetabadgeDecoration` | ❌ | refer to `MetabadgeDecoration` documentation | Customize how the badge looks. |
 class Metabadge extends StatelessWidget {
   final Widget? header;
   final Widget body;
@@ -75,6 +84,16 @@ class Metabadge extends StatelessWidget {
   }
 }
 
+/// The decoration to customize `Metabadge`.
+///
+/// # Constructor
+///
+/// | Name | Type | Required | Default | Description |
+/// |--:|:-:|:-:|:-:|:-:|
+/// | **bodyColor** | `Color` | ❌ | `Colors.green` | The background color of body. |
+/// | **headerColor** | `Color` | ❌ | `Colors.black54` | The background color of header. |
+/// | **radius** | `double` | ❌ | `0.0` | How round the badge looks. |
+/// | **padding** | `double` | ❌ | `5.0` | The spacing around the header and body. |
 class MetabadgeDecoration {
   final Color? bodyColor;
   final Color? headerColor;
