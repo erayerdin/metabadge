@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 
 const _defaultRadius = 0.0;
 const _defaultPadding = 5.0;
+const _defaultBodyColor = Colors.green;
+const _defaultHeaderColor = Colors.black54;
 
 class Metabadge extends StatelessWidget {
   final Widget? header;
@@ -26,8 +28,8 @@ class Metabadge extends StatelessWidget {
     Key? key,
     this.header,
     this.decoration = const MetabadgeDecoration(
-      bodyColor: Colors.green,
-      headerColor: Colors.black54,
+      bodyColor: _defaultBodyColor,
+      headerColor: _defaultHeaderColor,
       radius: _defaultRadius,
       padding: _defaultPadding,
     ),
@@ -80,8 +82,8 @@ class MetabadgeDecoration {
   final double? padding;
 
   const MetabadgeDecoration({
-    this.bodyColor = Colors.green,
-    this.headerColor = Colors.black54,
+    this.bodyColor = _defaultBodyColor,
+    this.headerColor = _defaultHeaderColor,
     this.radius = _defaultRadius,
     this.padding = _defaultPadding,
   });
