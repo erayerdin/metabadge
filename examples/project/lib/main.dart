@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:metabadge/metabadge.dart';
 
+// see `examples` constant below
+
 void main() {
   runApp(const MyApp());
 }
@@ -8,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// this class is just a helper for rendering on the screen
 class MetabadgeExample {
   final String title;
   final Metabadge metabadge;
@@ -32,6 +34,9 @@ class MetabadgeExample {
 
 const TextStyle whiteTextStyle = TextStyle(color: Colors.white);
 
+// THESE ARE THE EXAMPLES
+// ignore `MetabadgeExample` class, it is just a helper for rendering
+// just look at `metabadge` attributes to see how it is done
 final List<MetabadgeExample> examples = [
   const MetabadgeExample(
     title: 'Without Header',
