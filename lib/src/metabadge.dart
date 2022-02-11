@@ -14,6 +14,9 @@
 
 import 'package:flutter/material.dart';
 
+const _defaultRadius = 0.0;
+const _defaultPadding = 5.0;
+
 class Metabadge extends StatelessWidget {
   final Widget? header;
   final Widget body;
@@ -25,8 +28,8 @@ class Metabadge extends StatelessWidget {
     this.decoration = const MetabadgeDecoration(
       bodyColor: Colors.green,
       headerColor: Colors.black54,
-      radius: 0,
-      padding: 5.0,
+      radius: _defaultRadius,
+      padding: _defaultPadding,
     ),
     required this.body,
   }) : super(key: key);
@@ -37,25 +40,30 @@ class Metabadge extends StatelessWidget {
       children: [
         if (header != null)
           Container(
-            padding: EdgeInsets.all(decoration.padding ?? 5),
+            padding: EdgeInsets.all(decoration.padding ?? _defaultPadding),
             decoration: BoxDecoration(
               color: decoration.headerColor,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(decoration.radius ?? 0),
-                bottomLeft: Radius.circular(decoration.radius ?? 0),
+                topLeft: Radius.circular(decoration.radius ?? _defaultRadius),
+                bottomLeft:
+                    Radius.circular(decoration.radius ?? _defaultRadius),
               ),
             ),
             child: header,
           ),
         Container(
-          padding: EdgeInsets.all(decoration.padding ?? 5),
+          padding: EdgeInsets.all(decoration.padding ?? _defaultPadding),
           decoration: BoxDecoration(
             color: decoration.bodyColor,
             borderRadius: header == null
-                ? BorderRadius.all(Radius.circular(decoration.radius ?? 0))
+                ? BorderRadius.all(
+                    Radius.circular(decoration.radius ?? _defaultRadius),
+                  )
                 : BorderRadius.only(
-                    topRight: Radius.circular(decoration.radius ?? 0),
-                    bottomRight: Radius.circular(decoration.radius ?? 0),
+                    topRight:
+                        Radius.circular(decoration.radius ?? _defaultRadius),
+                    bottomRight:
+                        Radius.circular(decoration.radius ?? _defaultRadius),
                   ),
           ),
           child: body,
@@ -74,7 +82,7 @@ class MetabadgeDecoration {
   const MetabadgeDecoration({
     this.bodyColor = Colors.green,
     this.headerColor = Colors.black54,
-    this.radius = 0,
-    this.padding = 5,
+    this.radius = _defaultRadius,
+    this.padding = _defaultPadding,
   });
 }
