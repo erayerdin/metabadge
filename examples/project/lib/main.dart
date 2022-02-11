@@ -107,27 +107,18 @@ final List<MetabadgeExample> examples = [
       decoration: MetabadgeDecoration(radius: 5),
     ),
   ),
-  MetabadgeExample(
-    title: 'With Header Icon',
+  const MetabadgeExample(
+    title: 'Different Padding',
     metabadge: Metabadge(
-      header: Row(
-        children: const [
-          Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-          Text(
-            'header',
-            style: whiteTextStyle,
-          ),
-        ],
-      ),
-      body: const Text(
-        'body',
+      header: Text(
+        'hello',
         style: whiteTextStyle,
       ),
-      // TODO change radius
-      decoration: const MetabadgeDecoration(radius: 5),
+      body: Text(
+        'world',
+        style: whiteTextStyle,
+      ),
+      decoration: MetabadgeDecoration(padding: 10),
     ),
   ),
 ];
